@@ -56,7 +56,7 @@ public class CustomListTest {
      * Deletes a city from a list * @param city
      */
     @Test
-    public void deleteCityTest() {
+    public void deleteCityTest() throws Exception {
         list = MockCityList();
         list.addCity(new City("Estevan", "SK"));
         assertEquals(list.getCount(), 1);
@@ -66,6 +66,9 @@ public class CustomListTest {
         assertEquals(list.getCount(), 1);
     }
 
+    /**
+     * Counts the cities in a list
+     */
     @Test
     public void countCitiesTest() {
         list = MockCityList();

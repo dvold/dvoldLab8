@@ -68,15 +68,19 @@ public class CustomList extends ArrayAdapter<City> {
     /**
      * Deletes a city from a list * @param city
      */
-    public void deleteCity(City city) {
-        cities.remove(city);
+    public void deleteCity(City city) throws Exception {
+        if (this.hasCity(city)) {
+            cities.remove(city);
+        } else {
+            throw new Exception("City is not in list.");
+        }
     }
 
     /**
      * Counts the cities in a list
      */
     public int countCities() {
-        return 0;
+        return cities.size();
     }
 
 }
