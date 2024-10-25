@@ -69,7 +69,7 @@ public class CustomList extends ArrayAdapter<City> {
      * Deletes a city from a list * @param city
      */
     public void deleteCity(City city) {
-
+        cities.remove(city);
     }
 
 }
