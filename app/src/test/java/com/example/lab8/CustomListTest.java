@@ -37,6 +37,9 @@ public class CustomListTest {
         assertEquals(list.getCount(),listSize + 1);
     }
 
+    /**
+     * this checks if a list has a city * @param city * @return boolean
+     */
     @Test
     public void hasCityTest(){
         list = MockCityList();
@@ -49,6 +52,9 @@ public class CustomListTest {
         assertEquals(haveCity2,false);
     }
 
+    /**
+     * Deletes a city from a list * @param city
+     */
     @Test
     public void deleteCityTest() {
         list = MockCityList();
@@ -58,6 +64,16 @@ public class CustomListTest {
         assertEquals(list.getCount(), 2);
         list.deleteCity(new City("Estevan", "SK"));
         assertEquals(list.getCount(), 1);
+    }
+
+    @Test
+    public void countCitiesTest() {
+        list = MockCityList();
+        list.addCity(new City("Estevan", "SK"));
+        list.addCity(new City("Edmonton", "AB"));
+        assertEquals(list.countCities(), 2);
+        list.addCity(new City("Vancouver", "BC"));
+        assertEquals(list.countCities(), 3);
     }
 
 }
